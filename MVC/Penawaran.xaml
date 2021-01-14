@@ -1,0 +1,27 @@
+﻿<Window x:Class="MVC.Penawaran"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVC"
+        mc:Ignorable="d"
+        Title="Penawaran" Height="450" Width="310">
+    <Grid>
+
+        <ListBox x:Name="listPenawaran" Margin="20,56,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="300" Width="260" SelectionChanged="listPenawaran_selectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="15"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="{Binding title}" TextAlignment="Left" />
+                        <TextBlock Grid.Row="1" Text="{Binding price}" TextAlignment="Left"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Food yang ditawarkan" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="126" Height="26" Grid.Column="1"/>
+    </Grid>
+</Window>

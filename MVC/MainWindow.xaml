@@ -1,0 +1,59 @@
+﻿<Window x:Class="MVC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVC"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="495" Width="812">
+    <Grid>
+        <Label Content="Ringkasan Pesanan" HorizontalAlignment="Left" Height="35" Margin="33,10,0,0" VerticalAlignment="Top" Width="162" FontWeight="Bold"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="180" Margin="10,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="237"/>
+        <Label Content="Diantar Ke" HorizontalAlignment="Left" Height="33" Margin="33,61,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold"/>
+        <Label Content="Rumah Cahya Laksana" HorizontalAlignment="Left" Height="27" Margin="33,99,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label Content="Jl.Kaliuran km 7" HorizontalAlignment="Left" Height="33" Margin="33,131,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Rectangle HorizontalAlignment="Center" Height="383" Margin="0,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="296"/>
+        <Label Content="Item Pesanan" HorizontalAlignment="Left" Margin="276,61,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold"/>
+        <Button x:Name="buttonAddItem" Content="Menu" HorizontalAlignment="Left" Margin="444,69,0,0" VerticalAlignment="Top" Width="77" Click="onButtonAddItemClicked" Height="43"/>
+        <ListBox x:Name="listBoxPesanan" HorizontalAlignment="Left" Height="196" Margin="276,122,0,0" VerticalAlignment="Top" Width="245" MouseLeftButtonUp="listBoxPesanan_ItemClicked">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="15" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="{Binding title}" TextAlignment="Left" />
+                        <TextBlock Grid.Row="1" Text="{Binding price}"  TextAlignment="Left" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Subtotal" HorizontalAlignment="Left" Height="26" Margin="273,322,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="labelSubtotal" Content="80.000" HorizontalAlignment="Left" Margin="458,322,0,0" VerticalAlignment="Top" Width="69"/>
+        <Label Content="Delivery Fee" HorizontalAlignment="Left" Height="25" Margin="273,353,0,0" VerticalAlignment="Top" Width="79"/>
+        <Label x:Name="labelDeliveryFee" Content="15.000" HorizontalAlignment="Left" Margin="458,353,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.4,0.541"/>
+        <Label Content="Promo" HorizontalAlignment="Left" Margin="276,383,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="labelPromoFee" Content="-5.000" HorizontalAlignment="Left" Margin="458,384,0,0" VerticalAlignment="Top"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="190" Margin="559,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="197"/>
+        <Label Content="Metode Pembayaran" HorizontalAlignment="Left" Margin="569,56,0,0" VerticalAlignment="Top" Width="122" FontWeight="Bold"/>
+        <Label Content="Ono" HorizontalAlignment="Left" Margin="569,91,0,0" VerticalAlignment="Top" FontSize="9"/>
+        <Label x:Name="labelBalance" Content="9.000.000" HorizontalAlignment="Left" Height="27" Margin="569,108,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.4,1.335"/>
+        <Button Content="Ganti" HorizontalAlignment="Left" Margin="703,111,0,0" VerticalAlignment="Top"/>
+        <Label Content="Promo" HorizontalAlignment="Left" Margin="569,145,0,0" VerticalAlignment="Top" FontSize="9"/>
+
+        <Button x:Name="Diskon" Content="Ganti" HorizontalAlignment="Left" Margin="703,173,0,0" VerticalAlignment="Top" Click="onButtonDiskonClicked"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="191" Margin="559,242,0,0" Stroke="Black" VerticalAlignment="Top" Width="197"/>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="559,245,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelGrantTotal" Content="40.000" HorizontalAlignment="Left" Margin="606,322,0,0" VerticalAlignment="Top" Height="49" Width="99" FontSize="28"/>
+        <Label Content="{Binding nama}" HorizontalAlignment="Left" Margin="577,172,0,0" VerticalAlignment="Top" Width="67" Height="21"/>
+
+
+
+
+    </Grid>
+</Window>
